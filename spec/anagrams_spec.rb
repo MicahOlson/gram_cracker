@@ -14,7 +14,7 @@ describe('ComparisonSet#compare') do
   end
 
   it('checks if inputs are actually words') do
-    words = ComparisonSet.new('Blttst', 'Stbtlt')
+    words = ComparisonSet.new('Blttst', 'Subtle')
     expect(words.compare).to(eq('Oops — please include real words only!'))
   end
 
@@ -26,5 +26,10 @@ describe('ComparisonSet#compare') do
   it('checks if two phrases of multiple words are anagrams or antigrams, ignoring spaces and punctuation.') do
     phrases = ComparisonSet.new('I think therefore I am.', "I fear to think I'm here!")
     expect(phrases.compare).to(eq('These are anagrams — they share all the same letters.'))
+  end
+
+  it('checks if individual words in phrases are actually words') do
+    words = ComparisonSet.new('asteroid threats', 'disaster to ttrth')
+    expect(words.compare).to(eq('Oops — please include real words only!'))
   end
 end
