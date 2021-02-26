@@ -12,4 +12,9 @@ describe('Words#compare') do
     words = Words.new('Bluest', 'Subtle')
     expect(words.compare).to(eq('These words are anagrams—they share all the same letters.'))
   end
+
+  it('checks if inputs are actually words') do
+    words = Words.new('Blttst', 'Stbtlt')
+    expect(words.compare).to(eq('Oops—please try again with actual words!'))
+  end
 end
