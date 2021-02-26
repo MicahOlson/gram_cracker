@@ -1,11 +1,13 @@
 #!/usr/bin/env ruby
 
+require('artii')
 require('./lib/cracker')
 
 class Program
+  @@title = Artii::Base.new
   def self.start
-    system 'artii "Gram-Cracker!"'
-    puts "-by Micah L. Olson\n\n"
+    puts @@title.asciify('Gram-Cracker!')
+    puts "-by Micah L. Olson (2/26/2021)\n\n"
     puts "Enter two words or two phrases below to see if they are anagrams (sharing\nall the same letters), antigrams (sharing no common letters), or neither.\n"
     loop do
       print "\nFirst word or phrase: "
@@ -17,7 +19,7 @@ class Program
       again = gets.chomp
       break if again == 'n'
     end
-    puts "\nThank you for using Gram-Cracker! Goodbye."
+    puts "\nThank you for using Gram-Cracker! Goodbye.\n<exit successful>"
   end
 end
 
