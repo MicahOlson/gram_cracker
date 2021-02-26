@@ -32,4 +32,9 @@ describe('GramCracker#crack') do
     phrases = GramCracker.new('asteroid threats', 'disaster to ttrth')
     expect(phrases.crack).to(eq('Oops — please include real words only!'))
   end
+
+  it('returns a message if words or phrases were not determined to be anagrams or antigrams') do
+    phrases = GramCracker.new('I think therefore I am.', 'disaster to earth')
+    expect(phrases.crack).to(eq('These are neither anagrams nor antigrams.'))
+  end
 end
