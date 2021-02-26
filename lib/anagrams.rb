@@ -1,7 +1,7 @@
 class Words
   def initialize(word_1, word_2)
-    @word_1 = word_1
-    @word_2 = word_2
+    @word_1 = word_1.gsub(/[^a-z]/i, '')
+    @word_2 = word_2.gsub(/[^a-z]/i, '')
   end
 
   def is_word?(word)
@@ -25,8 +25,8 @@ class Words
       if @word_2.include?(char)
         is_antigram = false
       end
-    is_antigram
     end
+    is_antigram
   end
 
   def compare
