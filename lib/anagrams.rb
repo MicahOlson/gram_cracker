@@ -1,28 +1,38 @@
 class ComparisonSet
   def initialize(str1, str2)
-    @str1 = str1.gsub(/[^a-z]/i, '')
-    @str2 = str2.gsub(/[^a-z]/i, '')
+    @str1 = str1
+    @str2 = str2
   end
 
-  def is_word?(word)
+  def is_word?(str)
     vowels = %w(a e i o u)
-    is_word = false
-    word.each_char do |char|
-      if vowels.include?(char)
-        is_word = true
+    words = str.downcase.split(' ')
+    verify_words = []
+    words.each do |word|
+      is_word = false
+      word.each_char do |char|
+        if vowels.include?(char)
+          is_word = true
+        end
       end
+      verify_words.push(is_word)
     end
-    is_word
+    !verify_words.include?(false)
+  end
+
+  def strip_str(str)
+    str.gsub(/[^a-z]/i, '')
   end
 
   def is_anagram?
-    @str1.downcase.split('').sort == @str2.downcase.split('').sort
+    strip_str(@str1).downcase.split('').sort == 
+    strip_str(@str2).downcase.split('').sort
   end
 
   def is_antigram?
     is_antigram = true
-    @str1.each_char do |char|
-      if @str2.include?(char)
+    strip_str(@str1).each_char do |char|
+      if strip_str(@str2).include?(char)
         is_antigram = false
       end
     end
