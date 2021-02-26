@@ -5,5 +5,8 @@ class Words
   end
 
   def compare
+    if @word_1.split('').sort == @word_2.split('').sort
+      'These words are anagrams—they share all the same letters.'
+    end
   end
 end
