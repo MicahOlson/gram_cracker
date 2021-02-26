@@ -15,10 +15,14 @@ class Words
     is_word
   end
 
+  def is_anagram?
+    @word_1.downcase.split('').sort == @word_2.downcase.split('').sort
+  end
+
   def compare
     if !is_word?(@word_1) || !is_word?(@word_2)
       'Oops—please try again with actual words!'
-    elsif @word_1.downcase.split('').sort == @word_2.downcase.split('').sort
+    elsif is_anagram?
       'These words are anagrams—they share all the same letters.'
     end
   end
