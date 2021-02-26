@@ -17,4 +17,9 @@ describe('Words#compare') do
     words = Words.new('Blttst', 'Stbtlt')
     expect(words.compare).to(eq('Oops—please try again with actual words!'))
   end
+
+  it('checks if inputs are antigrams') do
+    words = Words.new('Friends', 'Boat')
+    expect(words.compare).to(eq('These words are antigrams—they share no common letters.'))
+  end
 end
