@@ -4,12 +4,14 @@ require('./lib/cracker')
 
 class Program
   def self.start
-    puts 'Welcome to Gram-Cracker! Enter two words or phrases to see if they are anagrams (sharing all the same letters) or antigrams (having no common letters.'
-    print 'Enter the first word or phrase: '
+    system 'artii "Gram-Cracker!"'
+    puts "-by Micah L. Olson\n\n"
+    puts "Enter two words or two phrases below to see if they are anagrams (sharing\nall the same letters), antigrams (sharing no common letters), or neither.\n\n"
+    print 'First word or phrase: '
     str1 = gets.chomp
-    print 'Enter the second word or phrase: '
+    print 'Second word or phrase: '
     str2 = gets.chomp
-    puts GramCracker.new(str1, str2).crack
+    puts "\n=> #{GramCracker.new(str1, str2).crack}\n\n"
   end
 end
 
