@@ -46,6 +46,8 @@ class GramCracker
       'These are anagrams — they share all the same letters.'
     elsif is_antigram?
       'These are antigrams — they share no common letters.'
+    else
+      'These are neither anagrams nor antigrams.'
     end
   end
 end
