@@ -5,16 +5,20 @@
 * * * 
 
 ## Description
-This application will check two individual words, or two phrases made up of multiple words, to see if they are anagrams (sharing all the same letters) or antigrams (for the purposes of this program, having no common letters). It also verifies that the words, either individual or in phrases, are actual words. Follow the steps below to run the program and get further in-app instructions.
+This application will check two individual words, or two phrases made up of multiple words, to see if they are anagrams (sharing all the same letters) or antigrams (for the purposes of this program, having no common letters). It also verifies that the words, either individual or in phrases, are actual words (based on whether they include a vowel). Follow the steps below to run the program and get further in-app instructions.
+<div align="center">
+  <img src="lib/img/preview.png" alt="A preview of Gram-Cracker" width="70%">
+</div>
+  
 * * *
 
 ## Technologies
 * Ruby 2.6.5
 * Bundler 1.17.2
-* Rspec 3.10
+* RSpec 3.10
 * pry 0.14.0
+* artii 2.1.2
 * git 2.30.1
-* GitHub
 * * *
 
 ## Requirements
@@ -64,16 +68,16 @@ This application will check two individual words, or two phrases made up of mult
 ***
 
 ## Graphic User Interface
-* This program does not have a *graphic user interface* (GUI) and must be run in your system's terminal emulator
+* This program does not have a *graphic user interface* (GUI) and must be run in your system's terminal emulator.
 * If you would like to utilize a GUI for opening or editing this project's files, here are some **recommended code editors**:
   * [Visual Studio Code](https://code.visualstudio.com) - "Code editing. Redefined."
   * [Atom](https://atom.io) - "A hackable text editor for the 21st Century"
   * [SublimeText](https://www.sublimetext.com) - "A sophisticated text editor for code, markup and prose"
 ***
 
-## Bugs, Fixes and Future Improvements
+## Bugs, Fixes, and Future Improvements
 * This program has no known bugs. If you find a bug, please report it to me at the email address below.
-* There is no additional development scheduled for this program.
+* There are no feature enhancements currently scheduled for this program.
 ***
 
 ## License
@@ -82,4 +86,4 @@ Copyright &copy; 2021 Micah L. Olson
 * * *
 
 ## Contact Information
-Micah L. Olson: at <a href="https://www.linkedin.com/in/micah-lewis-olson/" target="_blank">LinkedIn</a> or by <a href="mailto:micah.olson@protonmail.com" target="_blank">email</a>
+Micah L. Olson: at <a href="https://www.linkedin.com/in/micah-lewis-olson/" target="_blank">LinkedIn</a> or by <a href="mailto:micah.olson@protonmail.com" target="_blank">email</a>.
