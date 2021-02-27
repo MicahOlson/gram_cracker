@@ -5,11 +5,11 @@ class GramCracker
   end
 
   def anagram?
-    standardize_str(@str1) == standardize_str(@str2)
+    conform_str(@str1) == conform_str(@str2)
   end
 
   def antigram?
-    standardize_str(@str1).none? { |char| standardize_str(@str2).include?(char) }
+    conform_str(@str1).none? { |char| conform_str(@str2).include?(char) }
   end
 
   def crack
@@ -35,7 +35,7 @@ class GramCracker
       verify.all?
     end
 
-    def standardize_str(str)
+    def conform_str(str)
       str.gsub(/[^a-z]/i, '').downcase.split('').sort
     end
 end
