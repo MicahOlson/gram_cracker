@@ -22,14 +22,8 @@ class GramCracker
     standardize_str(@str1) == standardize_str(@str2)
   end
 
-  def is_antigram?
-    is_antigram = true
-    standardize_str(@str1).each do |char|
-      if standardize_str(@str2).include?(char)
-        is_antigram = false
-      end
-    end
-    is_antigram
+  def antigram?
+    standardize_str(@str1).none? { |char| standardize_str(@str2).include?(char) }
   end
 
   def crack
@@ -37,7 +31,7 @@ class GramCracker
       'Oops — please include real words only!'
     elsif anagram?
       'These are anagrams — they share all the same letters.'
-    elsif is_antigram?
+    elsif antigram?
       'These are antigrams — they share no common letters.'
     else
       'These are neither anagrams nor antigrams.'
