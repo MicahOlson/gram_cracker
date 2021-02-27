@@ -5,7 +5,7 @@
 * * * 
 
 ## Description
-This application will check two individual words, or two phrases made up of multiple words, to see if they are anagrams (sharing all the same letters) or antigrams (for the purposes of this program, having no common letters). It also verifies that the words, either individual or in phrases, are actual words (based on whether they include a vowel). Follow the steps below to run the program and get further in-app instructions.
+This application will check two individual words, or two phrases made up of multiple words, to see if they are anagrams (sharing all the same letters) or antigrams (for the purposes of this program, having no common letters). It also verifies that the words, either individual or in phrases, are actual words (based on whether they include a vowel). To run the program, follow all the instructions below for requirements, installation and setup.
 <div align="center">
   <img src="lib/img/preview.png" alt="A preview of Gram-Cracker" width="70%">
 </div>
