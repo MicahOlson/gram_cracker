@@ -4,20 +4,6 @@ class GramCracker
     @str2 = str2
   end
 
-  def word?(str)
-    vowels = %w(a e i o u y)
-    words = str.downcase.split(' ')
-    verify = []
-    words.each do |word|
-      vowels.any? { |vowel| word.include?(vowel) } ? verify.push(true) : verify.push(false)
-    end
-    verify.all?
-  end
-
-  def standardize_str(str)
-    str.gsub(/[^a-z]/i, '').downcase.split('').sort
-  end
-
   def anagram?
     standardize_str(@str1) == standardize_str(@str2)
   end
@@ -37,4 +23,19 @@ class GramCracker
       'These are neither anagrams nor antigrams.'
     end
   end
+
+  private
+    def word?(str)
+      vowels = %w(a e i o u y)
+      words = str.downcase.split(' ')
+      verify = []
+      words.each do |word|
+        vowels.any? { |vowel| word.include?(vowel) } ? verify.push(true) : verify.push(false)
+      end
+      verify.all?
+    end
+
+    def standardize_str(str)
+      str.gsub(/[^a-z]/i, '').downcase.split('').sort
+    end
 end
