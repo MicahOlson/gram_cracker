@@ -4,27 +4,21 @@ class GramCracker
     @str2 = str2
   end
 
-  def is_word?(str)
+  def word?(str)
     vowels = %w(a e i o u y)
     words = str.downcase.split(' ')
-    verify_words = []
+    verify = []
     words.each do |word|
-      is_word = false
-      word.each_char do |char|
-        if vowels.include?(char)
-          is_word = true
-        end
-      end
-      verify_words.push(is_word)
+      vowels.any? { |vowel| word.include?(vowel) } ? verify.push(true) : verify.push(false)
     end
-    !verify_words.include?(false)
+    verify.all?
   end
 
   def standardize_str(str)
     str.gsub(/[^a-z]/i, '').downcase.split('').sort
   end
 
-  def is_anagram?
+  def anagram?
     standardize_str(@str1) == standardize_str(@str2)
   end
 
@@ -39,9 +33,9 @@ class GramCracker
   end
 
   def crack
-    if !is_word?(@str1) || !is_word?(@str2)
+    if !word?(@str1) || !word?(@str2)
       'Oops — please include real words only!'
-    elsif is_anagram?
+    elsif anagram?
       'These are anagrams — they share all the same letters.'
     elsif is_antigram?
       'These are antigrams — they share no common letters.'
