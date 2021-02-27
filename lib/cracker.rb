@@ -5,7 +5,7 @@ class GramCracker
   end
 
   def is_word?(str)
-    vowels = %w(a e i o u)
+    vowels = %w(a e i o u y)
     words = str.downcase.split(' ')
     verify_words = []
     words.each do |word|
