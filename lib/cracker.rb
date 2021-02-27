@@ -20,19 +20,18 @@ class GramCracker
     !verify_words.include?(false)
   end
 
-  def strip_str(str)
-    str.gsub(/[^a-z]/i, '')
+  def standardize_str(str)
+    str.gsub(/[^a-z]/i, '').downcase.split('').sort
   end
 
   def is_anagram?
-    strip_str(@str1).downcase.split('').sort == 
-    strip_str(@str2).downcase.split('').sort
+    standardize_str(@str1) == standardize_str(@str2)
   end
 
   def is_antigram?
     is_antigram = true
-    strip_str(@str1).each_char do |char|
-      if strip_str(@str2).include?(char)
+    standardize_str(@str1).each do |char|
+      if standardize_str(@str2).include?(char)
         is_antigram = false
       end
     end
