@@ -3,7 +3,7 @@
 require('artii')
 require('./lib/cracker')
 
-class Program
+class GramCracker
   @@title = Artii::Base.new
   def self.start
     puts @@title.asciify('Gram-Cracker!')
@@ -14,7 +14,7 @@ class Program
       str1 = gets.chomp
       print 'Second word or phrase: '
       str2 = gets.chomp
-      puts "\n=> #{GramCracker.new(str1, str2).crack}\n\n"
+      puts "\n=> #{Cracker.new(str1, str2).crack}\n\n"
       print 'Crack another gram?[y/n] '
       again = gets.chomp
       break if again == 'n'
@@ -23,4 +23,4 @@ class Program
   end
 end
 
-Program.start
+GramCracker.start
